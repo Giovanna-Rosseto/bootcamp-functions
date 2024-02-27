@@ -4,7 +4,7 @@ import os
 
 from dotenv import load_dotenv
 
-from execute_rest_extractor.handler import handle
+from handler import handle
 
 
 # Import Environment Variables

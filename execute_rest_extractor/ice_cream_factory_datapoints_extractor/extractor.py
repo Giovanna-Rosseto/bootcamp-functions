@@ -22,7 +22,6 @@ from .datapoints_backfiller import Backfiller
 from .datapoints_streamer import Streamer
 from .ice_cream_factory_api import IceCreamFactoryAPI
 
-
 def timeseries_updates(
     timeseries_list: List[TimeSeries], config: IceCreamFactoryConfig, client: CogniteClient
 ) -> List[TimeSeries]:
@@ -151,10 +150,12 @@ def run_extractor(
             )
 
 
-def main(config_file_path: str = "extractor_config.yaml") -> None:
+def main(config_file_path: str = "execute_rest_extractor/extractor_config.yaml") -> None:
     """
     Main entrypoint.
     """
+    print(config_file_path)
+    print(os.path.exists(config_file_path))
     with Extractor(
         name="datapoints_rest_extractor",
         description="An extractor that ingest datapoints from the Ice Cream Factory API to CDF clean",
