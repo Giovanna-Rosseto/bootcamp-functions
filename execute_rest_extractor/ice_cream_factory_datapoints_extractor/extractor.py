@@ -150,10 +150,12 @@ def run_extractor(
             )
 
 
-def main(config_file_path: str = "execute_rest_extractor/extractor_config.yaml") -> None:
+def main(config_file_path: str = "extractor_config.yaml") -> None:
     """
     Main entrypoint.
     """
+    print(os.path.pardir)
+    config_file_path = os.path.join(os.path.dirname(__file__), "extractor_config.yaml")
     print(config_file_path)
     print(os.path.exists(config_file_path))
     with Extractor(
