@@ -70,7 +70,7 @@ def run_extractor(
         config: Configuration parameters
         stop_event: Cancellation token, will be set when an interrupt signal is sent to the extractor process
     """
-
+    print("entering run_extractor")
     config.frontfill.enabled = str(os.getenv("FRONTFILL_ENABLED", config.frontfill.enabled)).lower() == "true"
     config.frontfill.lookback_min = int(os.getenv("FRONTFILL_LOOKBACK_MIN", config.frontfill.lookback_min))
     config.backfill.enabled = str(os.getenv("BACKFILL_ENABLED", config.backfill.enabled)).lower() == "true"
