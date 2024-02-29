@@ -1,7 +1,11 @@
 from __future__ import annotations
 
 from dotenv import load_dotenv
-
+import os
+import sys
+parent_directory = os.path.abspath('/home/user/workspace/bootcamp-functions')
+sys.path.append(parent_directory)
+print(parent_directory)
 from common.oauth import get_client
 from oee_timeseries.handler import handle
 
